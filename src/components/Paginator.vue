@@ -18,7 +18,7 @@ const emit = defineEmits(['update:page'])
       <li>
         <a href="#"
            @click="emit('update:page', page - 1)"
-           :class="{ 'bg-gray-300 pointer-events-none': page === 1 }"
+           :class="{ 'bg-gray-100 pointer-events-none': page === 1 }"
            class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
           Previous
         </a>
@@ -26,7 +26,7 @@ const emit = defineEmits(['update:page'])
       <li v-for="number in pageCount">
         <a href="#"
            @click="emit('update:page', number)"
-           :class="{ 'bg-gray-300': number === page }"
+           :class="{ 'bg-gray-100': number === page }"
            class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
           {{ number }}
         </a>
@@ -34,7 +34,7 @@ const emit = defineEmits(['update:page'])
       <li>
         <a href="#"
            @click="emit('update:page', page + 1)"
-           :class="{ 'bg-gray-300 pointer-events-none': page === pageCount }"
+           :class="{ 'bg-gray-100 pointer-events-none': page === pageCount }"
            class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
           Next
         </a>
