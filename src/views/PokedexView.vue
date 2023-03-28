@@ -11,6 +11,7 @@ const pageSize = 54
 const filterValue = ref('')
 const pageCount = computed(() => Math.ceil(showPokemons.value.length / pageSize))
 const showPokemons = computed(() => filterByType(filterValue.value))
+const showPokemonsPage = computed(() => showPokemons.value.slice((page.value - 1) * pageSize, page.value * pageSize))
 
 
 watch(filterValue, () => page.value = 1)
@@ -29,7 +30,7 @@ watch(filterValue, () => page.value = 1)
       <paginator v-model:page="page" :page-count="pageCount" />
 
       <div class="flex justify-center flex-wrap gap-2">
-        <div v-for="item in showPokemons.slice((page - 1) * pageSize, page * pageSize)" :key="item.id">
+        <div v-for="item in showPokemonsPage" :key="item.id">
           <pokemon-card :pokemon="item"></pokemon-card>
         </div>
       </div>

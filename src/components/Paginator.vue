@@ -5,7 +5,8 @@ defineProps({
     type: Number
   },
   pageCount: {
-    required: true
+    required: true,
+    type: Number
   }
 })
 

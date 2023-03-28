@@ -9,7 +9,13 @@ export const usePokemon = () => {
     return pokemons.value.filter(x => x.type.includes(typeName))
   }
 
+  const goToDetails = (pokemon) => {
+    const detailsUrl = `https://www.pokemon.com/el/pokedex/${pokemon.slug}`
+    window.open(detailsUrl, '_blank')
+  }
+
   const pokemons = ref([]);
+
 
   const types = {
     bug: 'Bicho',
@@ -39,6 +45,7 @@ export const usePokemon = () => {
   return {
     pokemons,
     types,
-    filterByType
+    filterByType,
+    goToDetails
   }
 }
